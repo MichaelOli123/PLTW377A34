@@ -31,5 +31,10 @@ public class WeatherStation {
    public boolean isLocatedInState(String st) {
       return this.state.equals(st);
    }
+
+   /* Produce the latitude of this station */
+   public double getLatitude() {
+      return lat;
+   }
    
 }

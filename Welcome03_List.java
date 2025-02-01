@@ -23,5 +23,14 @@ public class Welcome03_List {
             System.out.println("  " + ws.getId() + ": " + ws.getName());
          }
       }
+
+      // Find the southernmost weather station
+      WeatherStation southernmost = allstns.get(0);
+      for (WeatherStation ws : allstns) {
+         if (ws.getLatitude() < southernmost.getLatitude()) {
+            southernmost = ws;
+         }
+      }
+      System.out.println("Southernmost station: " + southernmost.getId() + ": " + southernmost.getName());
    }
 }
