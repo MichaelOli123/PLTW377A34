@@ -8,11 +8,11 @@ public class MeteoriteAnalysis {
         Map<Integer, Integer> yearCounts = new HashMap<>();
         
         try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {
-            String line = br.readLine(); // Read header
+            String line = br.readLine(); 
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
                 try {
-                    if (values[5].equals("Fell")) { // Filter only meteorites that fell
+                    if (values[5].equals("Fell")) { 
                         if (!values[4].isEmpty()) {
                             masses.add(Double.parseDouble(values[4]));
                         }
@@ -30,15 +30,15 @@ public class MeteoriteAnalysis {
             return;
         }
         
-        // Compute mean mass
+       
         double meanMass = masses.stream().mapToDouble(Double::doubleValue).average().orElse(0.0);
         String meanMassString = String.format("%.2f", meanMass);
         
-        // Find years with most and least meteorites
+       
         int maxYear = Collections.max(yearCounts.entrySet(), Map.Entry.comparingByValue()).getKey();
         int minYear = Collections.min(yearCounts.entrySet(), Map.Entry.comparingByValue()).getKey();
         
-        // Output results
+        
         System.out.println("Mean mass of meteorites: " + meanMassString + " g");
         System.out.println("Year with most meteorite falls: " + maxYear);
         System.out.println("Year with least meteorite falls: " + minYear);
