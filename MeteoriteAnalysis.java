@@ -41,7 +41,7 @@ public class MeteoriteAnalysis {
         
         // Output results
         System.out.println("Mean mass of meteorites (g): " + meanMass + " g");
-        System.out.println("Mean mass of meteorites (kg): " + meanMassKg + " g");
+        System.out.println("Mean mass of meteorites (kg): " + meanMassKg + " kg");
         System.out.println("Year with most meteorite falls: " + maxYear);
         System.out.println("Year with least meteorite falls: " + minYear);
     }
