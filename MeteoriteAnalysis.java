@@ -34,14 +34,15 @@ public class MeteoriteAnalysis {
         double meanMass = masses.stream().mapToDouble(Double::doubleValue).average().orElse(0.0);
         double meanMassKg = meanMass / 1000;
         String meanMassString = String.format("%.2f", meanMass);
-        
+        String meanMassStringKg = String.format("%.2f", meanMassKg);
+
         // Find years with most and least meteorites
         int maxYear = Collections.max(yearCounts.entrySet(), Map.Entry.comparingByValue()).getKey();
         int minYear = Collections.min(yearCounts.entrySet(), Map.Entry.comparingByValue()).getKey();
         
         // Output results
-        System.out.println("Mean mass of meteorites (g): " + meanMass + " g");
-        System.out.println("Mean mass of meteorites (kg): " + meanMassKg + " kg");
+        System.out.println("Mean mass of meteorites (g): " + meanMassString + " g");
+        System.out.println("Mean mass of meteorites (kg): " + meanMassStringKg + " kg");
         System.out.println("Year with most meteorite falls: " + maxYear);
         System.out.println("Year with least meteorite falls: " + minYear);
     }
